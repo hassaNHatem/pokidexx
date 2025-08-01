@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { usePokemonList } from "../../hooks/usePokemons";
 import PokimonCard from "./PokimonCard";
 import Pagination from "../Pagination/Pagination";
-
+import "./PokimonListing.css";
 const PAGE_SIZE = 20;
 
 const PaginatedView: React.FC = () => {
@@ -32,7 +32,7 @@ const PaginatedView: React.FC = () => {
           currentPage={currentPage}
           onChange={setCurrentPage}
         />
-        <div style={{ marginTop: 8 }}>
+        <div style={{ marginTop: 15 }} className="pagination__info">
           Page {currentPage} of {Math.ceil((data?.count || 0) / PAGE_SIZE)} (
           {PAGE_SIZE} Pokémon shown)
         </div>

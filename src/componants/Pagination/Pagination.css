@@ -39,6 +39,9 @@
   align-items: center;
   display: flex;
   gap: 12px;
+  color: rgb(12, 12, 12);
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .pagination__pagination-button svg {
