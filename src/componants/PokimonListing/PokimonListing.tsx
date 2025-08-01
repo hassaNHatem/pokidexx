@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import { usePokemonList } from "../../hooks/usePokemons";
-import { ReactComponent as PokemonLogo } from "../../assets/pokemonlogo.svg";
 import "./PokimonListing.css";
 import PokimonListingHeader from "./PokimonListingHeader";
 import { DISPLAY_TYPE } from "../../constants/pokemon-listing";
+import PaginatedView from "./PaginatedView";
 
 const PokimonListing: React.FC = () => {
   const [displayType, setDisplayType] = useState(DISPLAY_TYPE.PAGINATION);
-  const { data, isLoading, isError } = usePokemonList(10, 0);
-
-  if (isLoading) return <div>Loading Pokémons...</div>;
-  if (isError) return <div>Error loading Pokémons</div>;
 
   return (
     // <ul>
@@ -23,6 +18,8 @@ const PokimonListing: React.FC = () => {
         displayType={displayType}
         setDisplayType={setDisplayType}
       />
+
+      <PaginatedView />
     </div>
   );
 };
