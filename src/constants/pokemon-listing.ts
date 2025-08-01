@@ -1,0 +1,4 @@
+export const DISPLAY_TYPE = {
+  PAGINATION: 0,
+  INFINITE_LOADING: 1,
+};
