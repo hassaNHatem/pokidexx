@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { List, Pagination } from "antd";
 import { usePokemonList } from "../../hooks/usePokemons";
 import PokimonCard from "./PokimonCard";
+import Pagination from "../Pagination/Pagination";
 
 const PAGE_SIZE = 20;
 
@@ -22,18 +22,15 @@ const PaginatedView: React.FC = () => {
     );
   };
   if (isLoading) return <div>Loading...</div>;
-  console.log(data);
   return (
     <div style={{ padding: "24px" }}>
       {renderPokimonCards()}
 
       <div style={{ textAlign: "center", marginTop: 16 }}>
         <Pagination
-          current={currentPage}
-          pageSize={PAGE_SIZE}
-          total={data?.count || 0}
+          totalPages={Math.ceil((data?.count || 0) / PAGE_SIZE)}
+          currentPage={currentPage}
           onChange={setCurrentPage}
-          showSizeChanger={false}
         />
         <div style={{ marginTop: 8 }}>
           Page {currentPage} of {Math.ceil((data?.count || 0) / PAGE_SIZE)} (

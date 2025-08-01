@@ -1,0 +1,47 @@
+.custom-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.custom-pagination button {
+  padding: 6px 12px;
+  border: 1px solid #eee;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.custom-pagination button.active {
+  background: black;
+  color: white;
+}
+
+.custom-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.custom-pagination .dots {
+  padding: 6px 10px;
+  color: #aaa;
+}
+
+.custom-pagination .info {
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.pagination__pagination-button {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.pagination__pagination-button svg {
+  width: 12px;
+  height: 20px;
+}
