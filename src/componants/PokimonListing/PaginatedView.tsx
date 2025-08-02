@@ -23,7 +23,7 @@ const PaginatedView: React.FC = () => {
   };
   if (isLoading) return <div>Loading...</div>;
   return (
-    <div style={{ padding: "24px" }}>
+    <div>
       {renderPokimonCards()}
 
       <div style={{ textAlign: "center", marginTop: 16 }}>
