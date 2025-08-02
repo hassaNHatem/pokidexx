@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import PokimonCard from "./PokimonCard";
 import { useInfinitePokemons } from "../../hooks/useInfinitePokemons";
 import "./PokemonInfiniteScroll.css";
+import { Link } from "react-router-dom";
 
 const PokemonInfiniteScroll = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
@@ -32,7 +33,14 @@ const PokemonInfiniteScroll = () => {
           page.results.map((pokemon: any) => {
             const id = pokemon?.url?.split("/").filter(Boolean).pop();
 
-            return <PokimonCard name={pokemon.name} id={id} />;
+            return (
+              <Link
+                to={`/pokemon/${id}`}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <PokimonCard name={pokemon.name} id={id} />
+              </Link>
+            );
           })
         )}
       </div>

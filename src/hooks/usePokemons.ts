@@ -13,7 +13,7 @@ export const usePokemonById = (idOrName: number | string) => {
   return useQuery({
     queryKey: ["pokemon", idOrName],
     queryFn: () => fetchPokemonById(idOrName),
-    enabled: !!idOrName, // Don't run if idOrName is undefined
+    enabled: !!idOrName,
     staleTime: 1000 * 60 * 5,
   });
 };

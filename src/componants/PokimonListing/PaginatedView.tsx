@@ -3,6 +3,7 @@ import { usePokemonList } from "../../hooks/usePokemons";
 import PokimonCard from "./PokimonCard";
 import Pagination from "../Pagination/Pagination";
 import "./PokimonListing.css";
+import { Link } from "react-router-dom";
 const PAGE_SIZE = 20;
 
 const PaginatedView: React.FC = () => {
@@ -16,7 +17,14 @@ const PaginatedView: React.FC = () => {
         {data?.results.map((el) => {
           const id = el?.url?.split("/").filter(Boolean).pop();
 
-          return <PokimonCard name={el.name} id={id} />;
+          return (
+            <Link
+              to={`/pokemon/${id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <PokimonCard name={el.name} id={id} />
+            </Link>
+          );
         })}
       </div>
     );

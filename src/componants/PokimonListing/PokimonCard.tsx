@@ -19,6 +19,7 @@ const PokimonCard: React.FC<PokemonCardProps> = ({ name, id, onClick }) => {
 
 const styles = {
   card: {
+    textDecoration: "none",
     height: 350,
     background: "#fff",
     borderRadius: 12,
@@ -40,6 +41,7 @@ const styles = {
     borderRadius: 8,
   },
   name: {
+    textDecoration: "none",
     marginTop: 12,
     fontSize: 18,
     textTransform: "capitalize" as const,

@@ -12,9 +12,30 @@ export interface PokemonListResponse {
   }[];
 }
 
+interface AbilityInfo {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
+}
+
+interface StatsInfo {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
+}
+
 export interface PokemonDetails {
   id: number;
   name: string;
+  abilities: AbilityInfo[];
+  stats: StatsInfo[];
+  base_experience: number;
   sprites: {
     front_default: string;
   };
